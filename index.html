@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/vue/1.0.24/vue.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="js.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="components col-md-2">
+          <ul id="components_list">
+            <li v-for="component in components" track-by="$index">
+
+              <div class="card card-outline-secondary text-xs-center">
+                <div class="card-block">
+                  Component {{component}}
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+        <div class="content col-md-10">
+          <ul id="content_components_list">
+            <li v-for="component in contentComponents" track-by="$index">
+              <div class="card card-outline-secondary text-xs-center">
+                <div class="card-block">
+                  <div class="col-md-1">
+                    <a class="btn btn-danger" href="#" v-on:click="removeComponent(component)">
+                      <i class="fa fa-trash-o fa-lg fa-fw"></i>
+                    </a>
+                    <a class="btn btn-info" href="#" v-on:click="editComponent(component)">
+                      <i class="fa fa-edit fa-lg fa-fw"></i>
+                    </a>
+                  </div>
+                  <div class="col-md-11">
+                    Component {{component}}
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
